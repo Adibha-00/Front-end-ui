@@ -1,0 +1,7 @@
+Steps to host website in RSSR63:
+
+1. Create an API from APIGW and integrate with the Lambda function
+2. After creating and deploying the API, set up a connection with the ALB since the invoke URL wont be working with a private API
+3. Raise a req to create a client side certificate and configure the ALB security group using the same certificate d
+4. After creation and attaching, it will go the target group of http port: 443 of the ALB, through backend, and fetch the IP.
+5. After that, raise a request to Public clouds team to integrate the certificate with the APIGW API you made.

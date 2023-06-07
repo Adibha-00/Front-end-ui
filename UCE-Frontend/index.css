@@ -1,0 +1,55 @@
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150vh;
+        }
+        
+        form {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+
+        form label,
+        form input,
+        form select {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: right;
+            font-weight: bold;
+            color: black;
+            font-family: Sans-serif;
+          }
+          
+        .input-row label {
+            margin-right: 20px;
+        
+          }
+        .bold-text {
+            font-weight: bold;
+            color: black;
+            font-family: Sans-serif;
+        }
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+          }
+          .image {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 300px;
+            height: 77px;
+          }
+          

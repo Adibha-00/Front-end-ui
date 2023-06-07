@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UCE Automation</title>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <script src ="index.js">  
+    </script>
+  <style>
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+
+</head>
+<body> 
+    <img
+              src="https://www.drugdiscoverytrends.com/wp-content/uploads/2021/05/Novartis.png"
+              class = "image"
+            />
+  <div class="center">
+    <h1 class ="bold-text">Databricks Scopes and Secrets</h1>
+    <form>
+      <div class="input-row">
+        <label for="operation">Operation Name:</label>
+        <select name="operation" id="operation">
+          <option value="" selected="selected"></option>
+        </select>
+      </div>
+      <p style="font-size:10px">Enter operation name</p>
+        <br><br> 
+        <div class="input-row">
+        <label for="subOperations">SubOperations:</label>
+        <select name="subOperation" id="subOperation">
+          <option value="" selected="selected"></option>
+        </select>
+      </div>
+      <br>
+      <div class="input-row">
+        <label for="permissions">Permissions:</label>
+        <select id="permission" name="permission">
+        </select>
+      </div>
+      <p style="font-size:10px">Enter permission type</p>
+      <br>
+      <div>
+        <label for="region" class = "bold-text">Region Name:</label>
+        <select id="region" name="region">
+          <option value="US">US</option>
+          <option value="EU-E2">EU-E2</option>
+          <option value="EU">EU</option>
+        </select>
+        <p style="font-size:10px">Enter region name</p>
+      </div>
+      <br>
+      
+      <label for="environment" class = "bold-text">Environment Name:</label>
+      <select id="environment" name="environment">
+        <option value="DEV">DEV</option>
+        <option value="QA">QA</option>
+        <option value="PROD">PROD</option>
+      </select>
+      <p style="font-size:10px">Enter the environment name to select databricks URL</p>
+      <br>
+      
+      <label for="token" class = "bold-text">Databricks Token:</label>
+      <input type="password" id="token" name="token" size ="35" required>
+      <p style="font-size:10px">Enter token value</p>
+      <br>
+      
+      <label for="scope" class = "bold-text">Scope Name:</label>
+      <input type="text" id="scope" name="scope" size ="35"  required>
+      <p style="font-size:10px">Enter scope name</p>
+      <br><br>
+      
+      <label for="key" class = "bold-text">Key:</label>
+      <input type="password" id="key" name="key" size  = "35">
+      <p style="font-size:10px">Enter the secrets value</p>
+      <br>
+
+      <label for="email" class = "bold-text">EMAIL ID:</label>
+      <input type="email" id="email" name="email" placeholder="521ID@novartis.net" size  = "35">
+      <br>
+
+      <input type="button" value="Submit" onclick="printSelectedValues(event)">
+    </form>
+
+    <div id="result"></div>
+  </div>
+</body>
+</html>
