@@ -1,14 +1,14 @@
 var subjectObject = {
-    "List": {
-      "ListCls" : [],
-      "ListScope" : []
+    "LIST": {
+      "listacls" : [],
+      "listscope" : []
     },
-    "Update": {
-      "Update Password": [],
-      "Update Permission": ["Read", "Write", "Manage"]
+    "UPDATE": {
+      "updatepassword": [],
+      "updatepermission": ["READ", "WRITE", "MANAGE"]
     },
-    "Create": {
-        "Scope Create" : []
+    "CREATE": {
+        "SCOPECREATE" : []
       }
   }
   window.onload = function() {
@@ -38,26 +38,31 @@ var subjectObject = {
     }
   }
 
-  function printSelectedValues() {
-    event.preventDefault();
-    var operation = document.getElementById("operation").value;
-    var subOperation = document.getElementById("subOperation").value;
-    var permission = document.getElementById("permission").value;
-    var region = document.getElementById("region").value;
-    var environment = document.getElementById("environment").value;
-    var email = document.getElementById("email").value;
-    var token = document.getElementById("token").value;
-    var scope = document.getElementById("scope").value;
-    if (token === "" || scope === ""){
-        alert("Please fill in all the compulsory fields.");
-        return;
-      }
-    var result = "Operation: " + operation + "<br>" +
-                 "SubOperation: " + subOperation + "<br>" +
-                 "Permission: " + permission + "<br>" +
-                 "Region: " + region + "<br>" +
-                 "Environment: " + environment + "<br>" +
-                 "Email: " + email +  "<br>";
+ /* function convertjson() {
+      const form = document.getElementById('data');
+      const formData = new FormData(form);
+      const jsonObject = Object.fromEntries(formData);
+      const jsonString = JSON.stringify(jsonObject);
+      console.log(jsonString); 
+  
+  };*/
+   
 
-    document.getElementById("result").innerHTML = result;
-  }
+        const form = document.getElementById('data');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            fetch('/process_form', {     /*forms a POST request to the python server, with the form data as response body */ 
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                resultDiv.innerHTML = data.result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });

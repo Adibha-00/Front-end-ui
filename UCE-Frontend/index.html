@@ -23,9 +23,9 @@
             />
   <div class="center">
     <h1 class ="bold-text">Databricks Scopes and Secrets</h1>
-    <form>
+    <form id="data">
       <div class="input-row">
-        <label for="operation">Operation Name:</label>
+        <label for="operation">OPERATION_NAME:</label>
         <select name="operation" id="operation">
           <option value="" selected="selected"></option>
         </select>
@@ -33,21 +33,21 @@
       <p style="font-size:10px">Enter operation name</p>
         <br><br> 
         <div class="input-row">
-        <label for="subOperations">SubOperations:</label>
+        <label for="subOperations">SUBOPERATIONS:</label>
         <select name="subOperation" id="subOperation">
           <option value="" selected="selected"></option>
         </select>
       </div>
       <br>
       <div class="input-row">
-        <label for="permissions">Permissions:</label>
+        <label for="permissions">PERMISSION:</label>
         <select id="permission" name="permission">
         </select>
       </div>
       <p style="font-size:10px">Enter permission type</p>
       <br>
       <div>
-        <label for="region" class = "bold-text">Region Name:</label>
+        <label for="region" class = "bold-text">REGION_NAME:</label>
         <select id="region" name="region">
           <option value="US">US</option>
           <option value="EU-E2">EU-E2</option>
@@ -57,35 +57,38 @@
       </div>
       <br>
       
-      <label for="environment" class = "bold-text">Environment Name:</label>
+      <label for="environment" class = "bold-text">ENVIRONMENT_NAME:</label>
       <select id="environment" name="environment">
-        <option value="DEV">DEV</option>
-        <option value="QA">QA</option>
-        <option value="PROD">PROD</option>
+        <option value="DEV">develop</option>
+        <option value="QA">qa</option>
+        <option value="PROD">production</option>
       </select>
       <p style="font-size:10px">Enter the environment name to select databricks URL</p>
       <br>
       
-      <label for="token" class = "bold-text">Databricks Token:</label>
+      <label for="token" class = "bold-text">DATABRICKS_TOKEN:</label>
       <input type="password" id="token" name="token" size ="35" required>
       <p style="font-size:10px">Enter token value</p>
       <br>
       
-      <label for="scope" class = "bold-text">Scope Name:</label>
+      <label for="scope" class = "bold-text">SCOPE_NAME:</label>
       <input type="text" id="scope" name="scope" size ="35"  required>
       <p style="font-size:10px">Enter scope name</p>
       <br><br>
       
-      <label for="key" class = "bold-text">Key:</label>
-      <input type="password" id="key" name="key" size  = "35">
+      <label for="key" class = "bold-text">KEY:</label>
+      <input type="text" id="key" name="key" size  = "35">
       <p style="font-size:10px">Enter the secrets value</p>
+      <label for="key" class = "bold-text">PASSWORD:</label>
+      <input type="password" id="password" name="PASSWORD" size  = "35">
+      <p style="font-size:10px">Enter the password to be updated</p>
       <br>
 
-      <label for="email" class = "bold-text">EMAIL ID:</label>
+      <label for="email" class = "bold-text">EMAIL_ID:</label>
       <input type="email" id="email" name="email" placeholder="521ID@novartis.net" size  = "35">
       <br>
 
-      <input type="button" value="Submit" onclick="printSelectedValues(event)">
+      <input type="button" value="Build">
     </form>
 
     <div id="result"></div>
